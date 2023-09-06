@@ -1,0 +1,38 @@
+java wait : thread.speel() - blind waits - here it waits for the time which we mension
+
+selenium wait : - intellegent waits - here it check every 500ms
+
+	*implicit : it is used for all findElement and findElements() | use before driver.get() | if element is not found the it gives no suchElement Exception
+ | can be given in ms,s,min,hr,day | driver.manage().timeouts().implicitlyWait(Duration.ofseconds(10));
+ 
+	*explicit : it is used for all e;ements,pages | this operates on condition | default polling period is 500ms | we get Timeout exception is the condition is not satisfied in the specified condtion | when to use it : when element is not clickeble(elementClickIntercepted),when element is not visible(elementNotInteractabel)
+	
+	*fluent : here we can change the polling period
+	
+	
+POM classes in JAVA
+	-element modification is easy
+	-UI changes can be handled easily
+	-element reusablity
+	-avoid element hardcoding in the test scripts
+	
+	element indentification using : @FindBy,@FindBYs,@findAll
+	
+	rules to create a POM class
+		-create separate POM class for every webpage
+		-find all the element by @FindBy annotation and make web element as private
+		-create the constructor and initilization of these web elements
+		-provide the getters to access these web element
+		
+		
+Testing : 
+for testing we cannot use the main method in java, instead we have to use other method for example we can create a method called "@Test public void sample()"
+
+Validations in testing
+
+testing is comparision between actual and expected output
+
+assertion : 
+	there are 2 types of assertion
+			1.hard assert : static methods - assert.assertEquals(),assertNotEquals(),asserTrue(),assertFalse(),assertSame(),assertNotSame() | mandatory informatios | it hard assert fails then it fails and it throws the assertion exception 
+			2.soft assert : non-static methods - SoftAssert sa = new SoftAssert(); , sa.assertEquals(), same methods as above | if softassert fails then it will not stop the execution and it will contimue and log the assertion failures at the end
